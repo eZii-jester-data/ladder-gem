@@ -21,23 +21,32 @@ class Ladder
   
   def ladder(arg = nil, &block)
       
-    if !arg.nil?
+    if arg.is_a?(Hash) && arg[:stop]
+      @saved_blocks.each.with_index do |block, i|
+        @saved_blocks.delete(i) if arg[:stop] == block
+      end
+    else
+      if !arg.nil?
       
       
-      #- 1
+        #- 1
       
       
-      @saved_blocks.each { |block| block.call(arg) } 
+        @saved_blocks.each { |block| block.call(arg) } 
       
       
-    elsif block_given?
+      elsif block_given?
       
       
-      #- 2
+        #- 2
       
       
-      @saved_blocks ||= []
-      @saved_blocks.push(block)
+        @saved_blocks ||= []
+        @saved_blocks.push(block)
+        
+        
+        return block
+      end
     end
   end
 end
