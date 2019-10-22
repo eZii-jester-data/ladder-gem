@@ -20,9 +20,8 @@ class Ladder
   end
   begin
     require 'byebug'
-  rescue LoadError => e
-    puts e
-    puts "Please install byebug via `gem install byebug`"
+  rescue LoadError => e  
+     fail "Please install byebug via `gem install byebug` #{e}"
   end
   def ladder(arg = nil, &block)
       
