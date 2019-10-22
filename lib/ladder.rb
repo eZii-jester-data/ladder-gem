@@ -21,7 +21,7 @@ class Ladder
   begin
     require 'byebug'
   rescue LoadError => e  
-     fail "Please install byebug via `gem install byebug` #{e}"
+     fail "Please install byebug via `gem install byebug` or add `byebug` to the Gemfile/gems.rb file. Error: #{e}"
   end
   def ladder(arg = nil, &block)
       
