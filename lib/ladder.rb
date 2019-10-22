@@ -30,7 +30,7 @@ class Ladder
       @saved_blocks.each { |block| block.call(arg) } 
       
       
-    else
+    elsif block_given?
       
       
       #- 2
