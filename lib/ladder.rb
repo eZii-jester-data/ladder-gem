@@ -28,7 +28,7 @@ class Ladder
     if arg.is_a?(Hash) && arg[:stop]
       @saved_blocks.each.with_index do |block, i|
         byebug
-        @saved_blocks.delete(i) if arg[:stop] == block
+        @saved_blocks.delete_at(i) if arg[:stop] == block
       end
     else
       if !arg.nil?
