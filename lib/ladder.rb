@@ -1,7 +1,7 @@
 RUBY_MAIN_OBJECT = self
 
 
-module Ladder
+class Ladder
   module FOR_RUBY_MAIN_OBJECT
     attr_accessor :singleton_ladder_instance
     def ladder(arg = nil, &block)
