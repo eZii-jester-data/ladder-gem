@@ -18,7 +18,12 @@ class Ladder
     
 
   end
-  require 'byebug'
+  begin
+    require 'byebug'
+  rescue LoadError => e
+    puts e
+    puts "Please install byebug via `gem install byebug`"
+  end
   def ladder(arg = nil, &block)
       
     if arg.is_a?(Hash) && arg[:stop]
