@@ -18,11 +18,12 @@ class Ladder
     
 
   end
-  
+  require 'byebug'
   def ladder(arg = nil, &block)
       
     if arg.is_a?(Hash) && arg[:stop]
       @saved_blocks.each.with_index do |block, i|
+        byebug
         @saved_blocks.delete(i) if arg[:stop] == block
       end
     else
